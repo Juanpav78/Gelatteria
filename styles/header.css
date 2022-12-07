@@ -1,3 +1,7 @@
+.logo{
+  text-decoration: none;
+  user-select: none;
+} 
 
 .text-enlace{
   text-decoration: none;
@@ -7,11 +11,17 @@
   padding: 2rem 2rem 0.5rem 2rem;
   border-bottom: 1rem solid var(--brownCakeDark);
   transition: all 0.2s ease-in;
+  user-select: none;
 }
 
 .text-enlace:hover{
   color: var(--blueCake);
   border-bottom: 1rem solid var(--blueCake);
+}
+
+.text-active{
+  color: var(--blueCakeLight);
+  border-bottom: 1rem solid var(--blueCakeLight);
 }
 
 .text-titulo{
@@ -70,27 +80,61 @@
 }  
 @media (max-width: 576px) {
   .navbar{
-    z-index: -1;
+    position: absolute !important;
     background-color: var(--brownCakeDark);
-    top: 0;
     left: 0;
     width: 100%;
     flex-direction: column;
-    opacity: 0.8;
-    transition: all 1s ease;
-    position: absolute !important;
+    animation: NavActiveR .4s both;
   }
   .navbar.active{
-    transition: all 1s ease;
-    top: 30.5rem;
-    opacity: 1;
+    animation: NavActive .4s both;
+    
+    
   }
   .text-enlace{
     color: var(--white);
-    width: 100%;
+    width: 90%;
     text-align: center;
   }
+
+  .text-active{
+    background: var(--blueCakeLight);
+    border-bottom: 1rem solid var(--blueCakeLight);
+
+  }
   
+}
+@keyframes NavActive {
+  0% {
+    top: 0;
+    opacity: 0;
+    z-index: -1;
+    }  
+    99% {
+      z-index: -1;
+    }
+    100% {
+      opacity: 1;
+      top: 30.84rem;
+      z-index: 1;
+    }
+}
+
+@keyframes NavActiveR {
+  0% {
+    top: 30.84rem;
+    opacity: 1;
+    z-index: -1;
+    }  
+    99% {
+      z-index: -1;
+      opacity:.5;
+    }
+    100% {
+      z-index: -1;
+     top: 0;
+    }
 }
 
 

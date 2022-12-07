@@ -1,11 +1,11 @@
-
+import Link from "next/link"
 const Footer = () => {
   return (
-    <footer class="footer">
-        <div class="footer__copy"><p>&copy; 2022 - Juan Alvarado</p></div>
-        <div class="footer__social">
-            <a href="#">FACEBOOK</a>
-            <a href="#">INSTAGRAM</a>
+    <footer className="footer">
+        <div className="footer__copy"><p>&copy; 2022 - Juan Alvarado</p></div>
+        <div className="footer__social">
+            <Link href="#">FACEBOOK</Link>
+            <Link href="#">INSTAGRAM</Link>
         </div>
     </footer>
   )
