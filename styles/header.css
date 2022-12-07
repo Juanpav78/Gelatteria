@@ -86,9 +86,15 @@
      height: 27rem;
      overflow: hidden;
      margin-top: 1.6rem;
-     animation: desa 1.2s ease;
-     -webkit-animation: desa 1.2s ease;
+     animation: DesDivR 1.2s both;
+     -webkit-animation: DesDivR 1.2s both;
 }
+
+  .a.active{
+    animation: DesDiv 1s both;
+    -webkit-animation: DesDiv 1s both;
+}
+
   .navbar{
     position: relative;
     background-color: var(--brownCakeDark);
@@ -116,9 +122,26 @@
   }
   
 }
-@keyframes desa {
-  0%, 99% {
-    
+
+@keyframes DesDiv {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}  
+    100% {
+      transform: scale(1);
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+}
+}
+
+@keyframes DesDivR {
+  0%,99%{
     transform: scale(1);
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
