@@ -29,6 +29,7 @@ const Header = () => {
 
     if(i==0){
         stateBtn.normal ="nav__boton--line na"
+        stateNav.normal ="navbar na"
     }
 
     
@@ -46,7 +47,7 @@ const Header = () => {
                     <div className={btn ? (stateBtn.active) : (stateBtn.normal)} ></div>
                     <div className={btn ? (stateBtn.active) : (stateBtn.normal)} ></div>
                 </div>
-                <div className={btn ? "a" : "a active"}>
+                <div className={btn ? "a active" : "a"}>
                     <div className={btn ? (stateNav.active) : (stateNav.normal)} id="navbar" >
                         <Link href="/" className={router.pathname === "/" ? "mx-2 text-enlace text-active" : "mx-2 text-enlace"}>Inicio</Link>
                         <Link href="/nosotros" className={router.pathname === "/nosotros" ? "mx-2 text-enlace text-active" : "mx-2 text-enlace"}>Nosotros</Link>

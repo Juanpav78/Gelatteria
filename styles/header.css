@@ -80,27 +80,20 @@
 }  
 @media (max-width: 576px) {
   .a{
-    position: absolute !important;
-    left: 0;
-    width: 100%;
-    height: 27rem;
-    overflow: hidden;
-    margin-top: 1.6rem;
-    
-  }
-
-  .a.active{
-    transition: desa 1.2s both;
-    -webkit-animation: desa 1.2s both;
-    -webkit-transition: desa 1.2s both;
-    -moz-transition: desa 1.2s both;
-    -ms-transition: desa 1.2s both;
-    -o-transition: desa 1.2s both;
+     position: absolute !important;
+     left: 0;
+     width: 100%;
+     height: 27rem;
+     overflow: hidden;
+     margin-top: 1.6rem;
+     animation: desa 1.2s ease;
+     -webkit-animation: desa 1.2s ease;
 }
   .navbar{
     position: relative;
     background-color: var(--brownCakeDark);
     left: 0;
+    top: -27rem;
     width: 100%;
     flex-direction: column;
     animation: NavActiveR 1s both;
