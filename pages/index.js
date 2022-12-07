@@ -8,10 +8,6 @@ export default function Home() {
         title={'Inicio'}
         description={'Tienda de Helado, venta Helados, Fabrica helados, Helados, dulces, frio'}
       >
-
-        <h1>INICIO</h1>
-        <Link href={'/nosotros'}> IR A Nosotros</Link>
-
       </Layout>
 
       

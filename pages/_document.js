@@ -4,7 +4,6 @@ export default function Document(){
     return (
         <Html>
             <Head>
-            <title>Gelatteria</title>
             <meta name="description" content="Tienda de Helados, Gelatteria" />
             <link rel="icon" href="/LogoHelado.ico" />
             <link rel="preconnect" href="https://fonts.googleapis.com" />

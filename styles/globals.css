@@ -50,25 +50,3 @@ a, p, h1, h2, h3{
   text-decoration: none;
   margin: 0;
 }
-
-.text-enlace{
-  text-decoration: none;
-  color: var(--brownCakeDark);
-  font-size: 2rem;
-  font-weight: 700;
-  padding: 2rem 2rem 0.5rem 2rem;
-  border-bottom: 1rem solid var(--brownCakeDark);
-  transition: all 0.2s ease-in;
-}
-
-.text-enlace:hover{
-  color: var(--blueCake);
-  border-bottom: 1rem solid var(--blueCake);
-}
-
-.text-titulo{
-  color: var(--brownCakeDark);
-  font-family: var(--fontTitle);
-  font-size: 4.5rem;
-}
-
