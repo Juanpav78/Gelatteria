@@ -1,3 +1,4 @@
+import next from "next";
 import Layout from "../components/layout";
 import ListadoHelados from "../components/listadoHelados";
 import styles from '../styles/listadoH.module.css'
@@ -43,7 +44,7 @@ export default Tienda
 
 
 export async function getStaticProps(){
-  const respuesta = await fetch(`http://localhost:1337/api/helados?populate=img`)
+  const respuesta = await fetch(`${process.env.API_URL}helados?populate=img`)
   const {data : helados} = await respuesta.json()
   return{
     props: {
