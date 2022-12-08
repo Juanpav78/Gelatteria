@@ -1,4 +1,3 @@
-import next from "next";
 import Layout from "../components/layout";
 import ListadoHelados from "../components/listadoHelados";
 import styles from '../styles/listadoH.module.css'
@@ -21,27 +20,19 @@ const Tienda = ({helados}) => {
                   key= {helado.id}
                 />
               ))
-
             ): 
             (
-
               <h2 className="text-center m-5"> No hay productos disponibles actualmente</h2>
             )
             }
             </div>
-           
-            
         </main>
       </Layout>
-
-      
-
     </>
   )
 }
 
 export default Tienda
-
 
 export async function getStaticProps(){
   const respuesta = await fetch(`${process.env.API_URL}helados?populate=img`)
