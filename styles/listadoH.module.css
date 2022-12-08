@@ -1,0 +1,40 @@
+
+.helados__carta {
+    background-color: #5c4141;
+    width: 35rem;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    overflow: hidden;
+    text-decoration: none;
+}
+.helados__carta_info {
+    padding: 2rem;
+    color: rgb(248, 248, 248);
+    font-family: "Baloo Tamma 2", cursive;
+}
+.h3 {
+    font-size: 2.4rem;
+}
+
+.contenidos{
+    height: 7.4rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.precio {
+    font-weight: bold;
+    font-size: 3rem;
+    color: #65ac9c;
+    text-align: end;
+}
+
+.img{
+    width: 100%;
+    height: 25rem;
+}

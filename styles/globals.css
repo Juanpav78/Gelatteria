@@ -51,6 +51,16 @@ a, p, h1, h2, h3{
   margin: 0;
 }
 
+.titulo{
+  font-family: var(--fontTitle);
+  color: var(--brownCakeDark);
+  font-size: 7.4rem;
+  text-align: center;
+  margin: 3rem 0;
+  text-shadow: 1px 3px var(--brownCake);
+  text-transform: capitalize;
+}
+
 .section{
   position: relative;
   z-index: 0;

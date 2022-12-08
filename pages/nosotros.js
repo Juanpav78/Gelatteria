@@ -12,7 +12,7 @@ const Nosotros = () => {
       >
         
         <main className="container">
-          <h2 className={styles.titulo}>Sobre nosotros</h2>
+          <h1 className="titulo">Sobre nosotros</h1>
           <div className={styles.contenido + " m-5"}>
             <Image src={imgNosotros.src} width={500} height={350}  alt="Nosotros, imagen, sobre nosotros" priority={true}/>
             <div>
