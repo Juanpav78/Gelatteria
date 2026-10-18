@@ -1,5 +1,5 @@
-:root{
-  /*color*/
+:root {
+  /* paleta original */
   --blueCakeLight: #84c3d6;
   --blueCake: #748fc9;
   --redCake: #c97474;
@@ -7,61 +7,145 @@
   --greenCake: #65ac9c;
   --brownCake: #b2a18a;
   --brownCakeDark: #5c4141;
-  --greyLigth: #f0f0f0;
-  --greyDark: #333333;
-  --black: #1b1b1b;
-  --white: rgb(248, 248, 248);
-  
-  /*color Transparente*/
-  --blueCakeLogoT: rgb(132, 195, 214,0.5);
-  --brownCakeT: rgba(178, 161, 138, 0.9);
-  --brownCakeDarkT: rgba(92, 66, 66, 0.9);
-  
-  /*font family*/
-  --fontText : 'Baloo 2', cursive;
-  --fontTitle : 'Lobster', cursive;
+
+  /* paleta renovada */
+  --cream: #fff8f1;
+  --cream-2: #fbeee0;
+  --white: #fffdfa;
+  --choco: #5c4141;
+  --choco-dark: #3a2727;
+  --caramel: #e3a65c;
+  --ink: #2f2020;
+  --ink-soft: #6b5656;
+  --pink: #f58aa6;
+
+  --shadow-sm: 0 0.4rem 1.2rem rgba(58, 39, 39, 0.1);
+  --shadow: 0 2.4rem 5rem -2.4rem rgba(58, 39, 39, 0.4);
+  --radius: 2.8rem;
+
+  --fontText: 'Baloo 2', system-ui, sans-serif;
+  --fontTitle: 'Lobster', cursive;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
   scroll-behavior: smooth;
-  
 }
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+
 body {
-  font-size: 1.6rem;
-  line-height: 1.8;
-  background-color: var(--white);
-  scroll-behavior: smooth;
-}
-
-.contenedor{
-  margin: 0 auto;
-  width: 90%;
-  max-width: 120rem;
-  padding: 2rem 0;
-}
-
-a, p, h1, h2, h3{
+  margin: 0;
   font-family: var(--fontText);
-  text-decoration: none;
+  font-size: 1.7rem;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+h1, h2, h3, h4, p {
   margin: 0;
 }
 
-.titulo{
-  font-family: var(--fontTitle);
-  color: var(--brownCakeDark);
-  font-size: 7.4rem;
-  text-align: center;
-  margin: 3rem 0;
-  text-shadow: 1px 3px var(--brownCake);
-  text-transform: capitalize;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.section{
-  position: relative;
-  z-index: 0;
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: var(--pink);
+  color: var(--white);
+}
+
+:focus-visible {
+  outline: 0.3rem solid var(--blueCake);
+  outline-offset: 0.3rem;
+}
+
+.contenedor {
+  width: min(120rem, 100% - 3.2rem);
+  margin-inline: auto;
+}
+
+.titulo {
+  font-family: var(--fontTitle);
+  font-weight: 400;
+  color: var(--choco);
+  font-size: clamp(4.4rem, 7vw, 7.4rem);
+  line-height: 1.1;
+  text-align: center;
+  text-shadow: 0.2rem 0.4rem 0 var(--brownCake);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  color: var(--choco);
+  background: var(--white);
+  padding: 0.5rem 1.6rem;
+  border-radius: 99rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.3rem 2.8rem;
+  border-radius: 99rem;
+  font-weight: 700;
+  font-size: 1.7rem;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btnPrimario {
+  background: var(--choco);
+  color: var(--white);
+  box-shadow: 0 0.6rem 0 var(--choco-dark);
+}
+
+.btnSecundario {
+  background: var(--white);
+  color: var(--choco);
+  box-shadow: inset 0 0 0 0.25rem var(--choco);
+}
+
+.seccion {
+  padding: 10rem 0;
+}
+
+.seccionHead {
+  text-align: center;
+  max-width: 64rem;
+  margin: 0 auto 5rem;
+  display: grid;
+  gap: 1.6rem;
+  justify-items: center;
+}
+
+.seccionHead p {
+  font-size: 1.9rem;
+  color: var(--ink-soft);
 }

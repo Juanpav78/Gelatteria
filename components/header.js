@@ -1,65 +1,97 @@
-import Logo from "../public/img/LogoHelado2.png"
-import Link from "next/link"
+import Link from 'next/link'
 import Image from 'next/image'
-import { useRouter } from "next/router"
-import { useState } from "react"
+import { useRouter } from 'next/router'
+import { useState } from 'react'
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion'
+import Logo from '../public/img/LogoHelado2.png'
+import styles from '../styles/header.module.css'
 
+const enlaces = [
+  { href: '/', label: 'Inicio' },
+  { href: '/tienda', label: 'Menú' },
+  { href: '/nosotros', label: 'Nosotros' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contacto', label: 'Contacto' },
+]
 
-const cambio = (bool)=>{
-    i=1
-    if (bool){
-        return false
-    }else{
-        return true
-    }
-    
-}
-let i=0;
 const Header = () => {
-    const router = useRouter()
-    const [btn , setbtn] = useState(false)
-    const stateBtn = {
-        normal :  "nav__boton--line",
-        active : "nav__boton--line active"
-    }
-    const stateNav = {
-        normal :  "navbar",
-        active : "navbar active "
-    }
+  const { pathname } = useRouter()
+  const [abierto, setAbierto] = useState(false)
+  const [conScroll, setConScroll] = useState(false)
+  const { scrollY } = useScroll()
+  useMotionValueEvent(scrollY, 'change', (y) => setConScroll(y > 20))
 
-    if(i==0){
-        stateBtn.normal ="nav__boton--line na"
-        stateNav.normal ="navbar na"
-    }
-
-    
   return (
-    <header className="header bg-light p-4">
-        <div className="container d-flex flex-column justify-content-center align-items-center">
-            <Link href={"/"} className="logo d-flex flex-column align-items-center mt-5 ">
-                <Image width={100} height={100} src={Logo.src} alt="logo helado" priority={true}/>
-                <p className="text-titulo text-center fw-bold">Gelatteria</p>
-            </Link>
-    
-            <nav >
-                <div className="nav__boton boton_circular boton no-animation d-block d-sm-none " onClick={() => setbtn(cambio(btn))}  id="botonNav">
-                    <div className={btn ? (stateBtn.active) : (stateBtn.normal)} ></div>
-                    <div className={btn ? (stateBtn.active) : (stateBtn.normal)} ></div>
-                    <div className={btn ? (stateBtn.active) : (stateBtn.normal)} ></div>
-                </div>
-                <div className={btn ? "a active" : "a"}>
-                    <div className={btn ? (stateNav.active) : (stateNav.normal)} id="navbar" >
-                        <Link href="/" className={router.pathname === "/" ? "mx-2 text-enlace text-active" : "mx-2 text-enlace"}>Inicio</Link>
-                        <Link href="/nosotros" className={router.pathname === "/nosotros" ? "mx-2 text-enlace text-active" : "mx-2 text-enlace"}>Nosotros</Link>
-                        <Link href="/tienda" className={router.pathname === "/tienda" ? "mx-2 text-enlace text-active" : "mx-2 text-enlace"}>Menu</Link>
-                        <Link href="/blog" className={router.pathname === "/blog" ? "mx-2 text-enlace text-active" : "mx-2 text-enlace"}>Blog</Link>
-                    </div>
-                </div>
-                
-             
-            </nav>
-        </div>  
-    </header>
+    <motion.header
+      className={`${styles.header} ${conScroll || abierto ? styles.conScroll : ''}`}
+      initial={{ y: -90, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ type: 'spring', stiffness: 120, damping: 18 }}
+    >
+      <div className={styles.inner}>
+        <Link href="/" className={styles.logo} onClick={() => setAbierto(false)}>
+          <motion.span
+            className={styles.logoImg}
+            whileHover={{ rotate: [0, -14, 10, -6, 0], scale: 1.1 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Image src={Logo} alt="Logo Gelatteria" width={52} height={52} priority />
+          </motion.span>
+          <span className={styles.logoText}>Gelatteria</span>
+        </Link>
+
+        <nav className={styles.nav} aria-label="Principal">
+          {enlaces.map(({ href, label }) => {
+            const activo = pathname === href
+            return (
+              <Link key={href} href={href} className={`${styles.link} ${activo ? styles.activo : ''}`}>
+                {activo && (
+                  <motion.span layoutId="nav-pill" className={styles.pill} transition={{ type: 'spring', stiffness: 380, damping: 30 }} />
+                )}
+                <span className={styles.linkText}>{label}</span>
+              </Link>
+            )
+          })}
+        </nav>
+
+        <button
+          type="button"
+          className={styles.burger}
+          aria-label={abierto ? 'Cerrar menú' : 'Abrir menú'}
+          aria-expanded={abierto}
+          onClick={() => setAbierto((a) => !a)}
+        >
+          <motion.span animate={abierto ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }} />
+          <motion.span animate={abierto ? { scaleX: 0, opacity: 0 } : { scaleX: 1, opacity: 1 }} />
+          <motion.span animate={abierto ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }} />
+        </button>
+      </div>
+
+      <AnimatePresence>
+        {abierto && (
+          <motion.nav
+            className={styles.mobileNav}
+            aria-label="Móvil"
+            initial={{ opacity: 0, y: -16, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -16, scale: 0.97 }}
+            transition={{ type: 'spring', stiffness: 260, damping: 24 }}
+          >
+            {enlaces.map(({ href, label }, i) => (
+              <motion.div key={href} initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0, transition: { delay: 0.05 * i } }}>
+                <Link
+                  href={href}
+                  onClick={() => setAbierto(false)}
+                  className={`${styles.mobileLink} ${pathname === href ? styles.mobileActivo : ''}`}
+                >
+                  {label}
+                </Link>
+              </motion.div>
+            ))}
+          </motion.nav>
+        )}
+      </AnimatePresence>
+    </motion.header>
   )
 }
 

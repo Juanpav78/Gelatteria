@@ -1,16 +1,20 @@
-import Head from "next/head"
-import Header from "./header"
-import Footer from "./footer"
-const Layout = ({children, title='', description=''}) => {
+import Head from 'next/head'
+import { motion } from 'framer-motion'
+
+const Layout = ({ children, title = '', description = '' }) => {
   return (
     <>
-    <Head>
+      <Head>
         <title>{`${title} - Gelatteria`}</title>
-        <meta name="description" content={`Inicio ${description}`} />
-    </Head>
-    <Header />
-    {children}
-    <Footer />
+        <meta name="description" content={description} />
+      </Head>
+      <motion.main
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      >
+        {children}
+      </motion.main>
     </>
   )
 }

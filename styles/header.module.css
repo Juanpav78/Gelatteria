@@ -1,0 +1,145 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.conScroll {
+  background: rgba(255, 248, 241, 0.85);
+  backdrop-filter: blur(1.2rem);
+  -webkit-backdrop-filter: blur(1.2rem);
+  box-shadow: 0 0.2rem 2rem rgba(58, 39, 39, 0.08);
+}
+
+.inner {
+  width: min(120rem, 100% - 3.2rem);
+  margin-inline: auto;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  user-select: none;
+}
+
+.logoImg {
+  display: grid;
+  background: var(--white);
+  border-radius: 50%;
+  padding: 0.4rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.logoText {
+  font-family: var(--fontTitle);
+  font-size: 3.4rem;
+  color: var(--choco);
+  line-height: 1;
+}
+
+.nav {
+  display: flex;
+  gap: 0.4rem;
+  background: var(--white);
+  padding: 0.6rem;
+  border-radius: 99rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.link {
+  position: relative;
+  padding: 0.6rem 1.8rem;
+  border-radius: 99rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--choco);
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: var(--blueCake);
+}
+
+.activo,
+.activo:hover {
+  color: var(--white);
+}
+
+.pill {
+  position: absolute;
+  inset: 0;
+  border-radius: 99rem;
+  background: var(--choco);
+}
+
+.linkText {
+  position: relative;
+}
+
+.burger {
+  display: none;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: none;
+  background: var(--choco);
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.burger span {
+  display: block;
+  width: 2.2rem;
+  height: 0.3rem;
+  border-radius: 99rem;
+  background: var(--white);
+}
+
+.mobileNav {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .nav {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .mobileNav {
+    display: grid;
+    gap: 0.6rem;
+    margin: 0 1.6rem 1.6rem;
+    padding: 1.2rem;
+    background: var(--choco);
+    border-radius: 2.4rem;
+    box-shadow: var(--shadow);
+    transform-origin: top right;
+  }
+
+  .mobileLink {
+    display: block;
+    padding: 1rem 1.6rem;
+    border-radius: 1.6rem;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+  .mobileActivo {
+    background: var(--blueCakeLight);
+    color: var(--choco-dark);
+  }
+}

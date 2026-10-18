@@ -1,0 +1,295 @@
+.cabecera {
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  gap: 1.2rem;
+  padding: 6rem 1.6rem 3rem;
+}
+
+.cabecera p {
+  font-size: 1.9rem;
+  color: var(--ink-soft);
+}
+
+.contenido {
+  padding-top: 5rem;
+}
+
+.aviso {
+  background: var(--white);
+  border: 0.2rem dashed var(--caramel);
+  border-radius: 1.6rem;
+  padding: 1rem 1.6rem;
+  margin-bottom: 3rem;
+  font-size: 1.5rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(28rem, 100%), 1fr));
+  gap: 3rem;
+}
+
+.vacio {
+  text-align: center;
+  margin: 5rem 0;
+  font-size: 2.4rem;
+  color: var(--ink-soft);
+}
+
+/* Tarjeta */
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: var(--shadow);
+}
+
+.visual {
+  position: relative;
+  height: 24rem;
+  background: var(--fondo);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.visual::before {
+  content: '';
+  position: absolute;
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--color);
+  opacity: 0.25;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover .visual::before {
+  transform: scale(1.35);
+}
+
+.scoop {
+  position: relative;
+  width: 40%;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card:hover .scoop {
+  transform: rotate(-8deg) scale(1.1) translateY(-0.6rem);
+}
+
+.scoop svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 1.2rem 1.2rem rgba(58, 39, 39, 0.2));
+}
+
+.foto {
+  object-fit: cover;
+}
+
+.tag,
+.tagInline {
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--acento);
+  background: var(--white);
+  padding: 0.3rem 1.2rem;
+  border-radius: 99rem;
+}
+
+.tag {
+  position: absolute;
+  top: 1.6rem;
+  left: 1.6rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.tagInline {
+  justify-self: start;
+  background: var(--fondo);
+}
+
+.info {
+  padding: 2.4rem;
+  display: grid;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.info h3 {
+  font-family: var(--fontTitle);
+  font-weight: 400;
+  font-size: 2.8rem;
+  line-height: 1.2;
+  color: var(--choco-dark);
+}
+
+.desc {
+  color: var(--ink-soft);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.pie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.8rem;
+}
+
+.precio {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--acento);
+}
+
+.ver {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--choco);
+  opacity: 0;
+  transform: translateX(-0.8rem);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.card:hover .ver,
+.card:focus-visible .ver {
+  opacity: 1;
+  transform: none;
+}
+
+/* Modal */
+.fondo {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(58, 39, 39, 0.55);
+  backdrop-filter: blur(0.6rem);
+  -webkit-backdrop-filter: blur(0.6rem);
+  display: grid;
+  place-items: center;
+  padding: 1.6rem;
+}
+
+.modal {
+  position: relative;
+  width: min(90rem, 100%);
+  max-height: calc(100svh - 3.2rem);
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--white);
+  border-radius: 3.6rem;
+  box-shadow: var(--shadow);
+}
+
+.modalVisual {
+  position: relative;
+  min-height: 40rem;
+  background: var(--fondo);
+  display: grid;
+  place-items: center;
+}
+
+.modalScoop {
+  width: 50%;
+}
+
+.modalScoop svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 2rem 2rem rgba(58, 39, 39, 0.25));
+}
+
+.modalInfo {
+  padding: 4.8rem 4rem;
+  display: grid;
+  align-content: center;
+  gap: 1.6rem;
+  justify-items: start;
+}
+
+.modalInfo h2 {
+  font-family: var(--fontTitle);
+  font-weight: 400;
+  font-size: clamp(3.6rem, 5vw, 5rem);
+  line-height: 1.1;
+  color: var(--choco-dark);
+}
+
+.modalInfo p {
+  font-size: 1.9rem;
+  color: var(--ink-soft);
+}
+
+.modalInfo .modalPrecio {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--acento);
+}
+
+.modalPrecio span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.cerrar {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  z-index: 2;
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 50%;
+  border: none;
+  background: var(--white);
+  color: var(--choco);
+  font-size: 2.8rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s;
+}
+
+.cerrar:hover {
+  transform: rotate(90deg);
+}
+
+@media (max-width: 700px) {
+  .modal {
+    grid-template-columns: 1fr;
+  }
+
+  .modalVisual {
+    min-height: 26rem;
+  }
+
+  .modalScoop {
+    width: 36%;
+  }
+
+  .modalInfo {
+    padding: 3rem 2.4rem;
+  }
+}

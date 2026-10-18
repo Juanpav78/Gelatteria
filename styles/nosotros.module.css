@@ -1,15 +1,100 @@
-.contenido img{
-width: 100%;
-height: auto;
-}
-.contenido{
-    display: grid;
-    gap: 4rem;
+.contenido {
+  display: grid;
+  gap: 6rem;
+  align-items: center;
 }
 
-@media (min-width : 1200px) {
-    .contenido{
-        grid-template-columns: repeat(2, 1fr);
-        align-items: center;
-    }
+.fotos {
+  position: relative;
+  padding: 0 4rem 4rem 0;
+}
+
+.fotoPrincipal {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 4rem 4rem 4rem 1.2rem;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.fotoPrincipal img,
+.fotoSecundaria img {
+  object-fit: cover;
+}
+
+.fotoSecundaria {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 42%;
+  aspect-ratio: 1;
+  border-radius: 2.4rem;
+  overflow: hidden;
+  border: 0.8rem solid var(--cream);
+  box-shadow: var(--shadow);
+  rotate: 4deg;
+}
+
+.scoopFlotante {
+  position: absolute;
+  top: -6rem;
+  left: -2rem;
+  width: 9rem;
+  z-index: 2;
+  filter: drop-shadow(0 1.2rem 1.2rem rgba(58, 39, 39, 0.2));
+}
+
+.texto {
+  display: grid;
+  gap: 2rem;
+  justify-items: start;
+}
+
+.texto p {
+  font-size: 1.9rem;
+  color: var(--ink-soft);
+}
+
+.tituloIzq {
+  text-align: left;
+}
+
+.datos {
+  margin-top: 8rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+}
+
+.dato {
+  border-radius: var(--radius);
+  padding: 3.2rem;
+  text-align: center;
+  display: grid;
+  font-weight: 600;
+  color: var(--ink-soft);
+  box-shadow: var(--shadow-sm);
+}
+
+.valor {
+  font-family: var(--fontTitle);
+  font-size: 6rem;
+  line-height: 1.1;
+}
+
+@media (min-width: 1000px) {
+  .contenido {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .datos {
+    grid-template-columns: 1fr;
+  }
+
+  .scoopFlotante {
+    left: 0;
+    width: 7rem;
+  }
 }

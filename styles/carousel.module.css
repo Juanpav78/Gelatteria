@@ -1,0 +1,258 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  margin-top: -8rem;
+  padding: 12rem 0 8rem;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+}
+
+.grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.texto {
+  display: grid;
+  gap: 2.2rem;
+  justify-items: start;
+}
+
+.nombre {
+  font-family: var(--fontTitle);
+  font-weight: 400;
+  font-size: clamp(5.2rem, 8.5vw, 10rem);
+  line-height: 1.05;
+  color: var(--choco-dark);
+  min-height: 2.2em;
+  display: flex;
+  align-items: flex-end;
+}
+
+.palabras {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.25em;
+}
+
+.palabra {
+  display: inline-flex;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+}
+
+.letra {
+  display: inline-block;
+}
+
+.detalle {
+  display: grid;
+  gap: 1rem;
+}
+
+.descripcion {
+  font-size: 2rem;
+  max-width: 48rem;
+  color: var(--ink-soft);
+}
+
+.precio {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--choco);
+}
+
+.precio span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.acciones {
+  display: flex;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.6rem;
+}
+
+.mini {
+  position: relative;
+  width: 5.4rem;
+  height: 5.4rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 0.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.miniRing {
+  position: absolute;
+  inset: -0.5rem;
+  border-radius: 50%;
+  border: 0.3rem solid var(--choco);
+}
+
+.miniScoop {
+  width: 70%;
+  height: auto;
+}
+
+.progreso {
+  width: 100%;
+  max-width: 32rem;
+  height: 0.5rem;
+  border-radius: 99rem;
+  background: rgba(92, 65, 65, 0.12);
+  overflow: hidden;
+}
+
+.progresoBarra {
+  height: 100%;
+  background: var(--choco);
+  transform-origin: left;
+}
+
+.escena {
+  position: relative;
+  width: 100%;
+  max-width: 54rem;
+  aspect-ratio: 1;
+  justify-self: center;
+  display: grid;
+  place-items: center;
+}
+
+.blob {
+  position: absolute;
+  inset: 6%;
+  box-shadow: inset 0 -2rem 6rem rgba(255, 255, 255, 0.5);
+}
+
+.anillo {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 0.3rem dashed rgba(92, 65, 65, 0.2);
+}
+
+.sello {
+  position: absolute;
+  top: 4%;
+  right: 2%;
+  z-index: 2;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  background: var(--choco);
+  color: var(--cream);
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow);
+}
+
+.sello svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+  font-size: 10.4px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.selloCentro {
+  font-size: 3rem;
+  color: var(--caramel);
+}
+
+.sombra {
+  position: absolute;
+  bottom: 5%;
+  width: 30%;
+  height: 4%;
+  border-radius: 50%;
+  background: rgba(58, 39, 39, 0.35);
+  filter: blur(0.6rem);
+}
+
+.scoopWrap {
+  position: relative;
+  z-index: 1;
+  width: 56%;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.scoopWrap:active {
+  cursor: grabbing;
+}
+
+.scoop {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 2rem 2rem rgba(58, 39, 39, 0.25));
+  pointer-events: none;
+}
+
+.chispa {
+  position: absolute;
+  width: 2rem;
+  height: 0.7rem;
+  border-radius: 99rem;
+  opacity: 0.85;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding-top: 10rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .escena {
+    max-width: 36rem;
+  }
+
+  .texto {
+    justify-items: center;
+    order: 2;
+  }
+
+  .nombre,
+  .palabras {
+    justify-content: center;
+  }
+
+  .nombre {
+    min-height: auto;
+  }
+
+  .acciones,
+  .selector {
+    justify-content: center;
+  }
+
+  .sello {
+    width: 9rem;
+    height: 9rem;
+  }
+}
