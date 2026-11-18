@@ -8,6 +8,21 @@
 ![Strapi](https://img.shields.io/badge/Strapi-4945FF?style=flat&logo=strapi&logoColor=white)
 ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=flat&logo=netlify&logoColor=white)
 
+🔗 **Demo:** [heladosgelatteria.netlify.app](https://heladosgelatteria.netlify.app/)
+
+![Gelatteria — vista de escritorio](https://res.cloudinary.com/degdhu5ep/image/upload/w_1400,q_auto,f_auto/v1792376267/images/jrcb5f3ttnbcw8rp3bfa.png)
+
+<details>
+<summary>📸 Más capturas</summary>
+
+![Gelatteria — captura 1](https://res.cloudinary.com/degdhu5ep/image/upload/w_1400,q_auto,f_auto/v1792376267/images/jswla9rnkzfupsh85pd1.png)
+![Gelatteria — captura 2](https://res.cloudinary.com/degdhu5ep/image/upload/w_1400,q_auto,f_auto/v1792376267/images/suobujb9ll9gd6kyo2d8.png)
+![Gelatteria — captura 3](https://res.cloudinary.com/degdhu5ep/image/upload/w_1400,q_auto,f_auto/v1792376267/images/pxqltdvnwfx5rdgi84gn.png)
+
+<p align="center"><img src="https://res.cloudinary.com/degdhu5ep/image/upload/w_400,q_auto,f_auto/v1793914595/images/s0quulw7mtf1odgdfd5y.jpg" alt="Gelatteria — vista móvil" width="300"></p>
+
+</details>
+
 **Lo que demuestra este proyecto:** Next.js con datos desde un CMS headless (Strapi) y respaldo local si la API no responde, ilustraciones de helado dibujadas con código según el sabor, transiciones compartidas entre tarjeta y modal con Framer Motion y estilos con CSS Modules.
 
 ## ✨ Páginas
